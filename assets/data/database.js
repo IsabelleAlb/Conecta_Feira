@@ -146,7 +146,7 @@ export async function ehFavorito(db, loja_id) {
 
 export function useDatabase() {
   const db = useSQLiteContext();
-
+  setupDatabase(db);
   return {
     db,
     // Categorias
