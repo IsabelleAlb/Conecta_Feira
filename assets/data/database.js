@@ -150,7 +150,6 @@ export function useDatabase() {
   return {
     db,
     // Categorias
-        inserirCategoria: (nome) => inserirCategoria(db, nome),
         buscarTodasCategorias: () => buscarTodasCategorias(db),
 
     // Lojas
