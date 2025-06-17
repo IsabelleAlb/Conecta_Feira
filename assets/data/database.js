@@ -117,6 +117,14 @@ export async function excluirProduto(db, id) {
   await db.runAsync('DELETE FROM produtos WHERE id = ?;', [id]);
 }
 
+export async function buscarProdutosPorLoja(db, loja_id) {
+  return await db.getAllAsync(
+    'SELECT * FROM produtos WHERE loja_id = ?;',
+    [loja_id]
+  );
+}
+
+
 // --- Funções para FAVORITOS ---
 
 export async function adicionarFavorito(db, loja_id) {
@@ -165,6 +173,7 @@ export function useDatabase() {
         inserirProduto: (nome, preco, imagem, loja_id) => inserirProduto(db, nome, preco, imagem, loja_id),
         atualizarProduto: (id, nome, preco, imagem) => atualizarProduto(db, id, nome, preco, imagem),
         excluirProduto: (id) => excluirProduto(db, id),
+        buscarProdutosPorLoja: (loja_id) => buscarProdutosPorLoja(db, loja_id),
 
     // Favoritos
         adicionarFavorito: (loja_id) => adicionarFavorito(db, loja_id),

@@ -7,6 +7,7 @@ import { Loja } from './assets/Screens/Loja';
 import CadastroScreen from './assets/Screens/cadastro';
 import { SQLiteProvider } from 'expo-sqlite';
 import { setupDatabase } from './assets/data/database';
+import {AreaLojista} from './assets/Screens/AreaLojista';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
           <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
           <Stack.Screen name="Cadastro" component={CadastroScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Loja" component={Loja} options={{ headerShown: false }} />
+          <Stack.Screen name="AreaLojista" component={AreaLojista} options={{headerShown: false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SQLiteProvider>

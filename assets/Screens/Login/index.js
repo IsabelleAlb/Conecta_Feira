@@ -7,6 +7,25 @@ export function Login() {
   const [senhaVisivel, setSenhaVisivel] = useState(false);
   const navigation = useNavigation();
 
+  function signin(){
+    const lojaExemplo = {
+      id: 1,
+      nome_fantasia: 'Minha Loja',
+      cnpj: '12548963547824',
+      nome_completo: 'Florzinha',
+      categoria_id:1,
+      email: 'meuemail@gmail.com',
+      senha: '123456',
+      imagem_perfil: 'https://via.placeholder.com/150'
+    };
+    navigation.navigate('AreaLojista', {loja: lojaExemplo});
+
+
+  }
+
+
+
+
   return (
     <View>
       <View style={styles.containerLogo}>
@@ -33,7 +52,7 @@ export function Login() {
       </View>
       
       <TouchableOpacity style={styles.botao}>
-        <Text style={styles.textoBotao} onPress={() => alert('teste')}>
+        <Text style={styles.textoBotao} onPress={signin}>
           Entrar
         </Text>
       </TouchableOpacity>
@@ -74,7 +93,6 @@ const styles = StyleSheet.create({
     width: '90%',
   },
 
-  // Novo estilo para a caixa de senha com ícone
   caixaSenha: {
     flexDirection: 'row',
     alignItems: 'center',
